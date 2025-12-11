@@ -221,6 +221,7 @@ class CheckpointLoader(HookBase):
             checkpoint = torch.load(
                 self.trainer.cfg.weight,
                 map_location=lambda storage, loc: storage.cuda(),
+                weights_only=False,
             )
 
             # Get model state dict for shape validation
